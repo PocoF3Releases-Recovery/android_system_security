@@ -23,6 +23,7 @@ package {
 
 rust_library {
     name: "libkeystore2_hal_names_rust",
+    recovery_available: true,
     crate_name: "keystore2_hal_names",
     srcs: ["lib.rs"],
     rustlibs: [
@@ -38,6 +39,7 @@ rust_library {
 
 cc_library_static {
     name: "libkeystore2_hal_names_cpp",
+    recovery_available: true,
     srcs: ["hal_names.cpp"],
     generated_headers: ["cxx-bridge-header"],
     generated_sources: ["hal_names_bridge_code"],

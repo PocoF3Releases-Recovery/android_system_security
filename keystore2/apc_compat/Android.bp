@@ -23,6 +23,7 @@ package {
 
 cc_library {
     name: "libkeystore2_apc_compat",
+    recovery_available: true,
     srcs: [
         "apc_compat.cpp",
     ],
@@ -38,6 +39,7 @@ cc_library {
 
 rust_bindgen {
     name: "libkeystore2_apc_compat_bindgen",
+    recovery_available: true,
     wrapper_src: "apc_compat.hpp",
     crate_name: "keystore2_apc_compat_bindgen",
     source_stem: "bindings",
@@ -54,6 +56,7 @@ rust_bindgen {
 
 rust_library {
     name: "libkeystore2_apc_compat-rust",
+    recovery_available: true,
     crate_name: "keystore2_apc_compat",
     srcs: [
         "apc_compat.rs",

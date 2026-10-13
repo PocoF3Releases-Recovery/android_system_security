@@ -66,6 +66,7 @@ cc_binary {
 // in Tag::ATTESTATION_APPLICATION_ID
 cc_library {
     name: "libkeystore-attestation-application-id",
+    recovery_available: true,
     defaults: [
         "keystore_defaults",
         "keystore2_use_latest_aidl_ndk_shared",

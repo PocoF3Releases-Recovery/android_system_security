@@ -23,6 +23,7 @@ package {
 
 rust_library {
     name: "libkeystore2_crypto_rust",
+    recovery_available: true,
     crate_name: "keystore2_crypto",
     srcs: ["lib.rs"],
     rustlibs: [
@@ -44,6 +45,7 @@ rust_library {
 
 cc_library {
     name: "libkeystore2_crypto",
+    recovery_available: true,
     srcs: [
         "certificate_utils.cpp",
         "crypto.cpp",
@@ -62,6 +64,7 @@ cc_library {
 
 rust_bindgen {
     name: "libkeystore2_crypto_bindgen",
+    recovery_available: true,
     wrapper_src: "crypto.hpp",
     crate_name: "keystore2_crypto_bindgen",
     source_stem: "bindings",

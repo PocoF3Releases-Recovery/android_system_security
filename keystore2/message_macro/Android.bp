@@ -29,6 +29,7 @@ rust_defaults {
 
 rust_library {
     name: "libmessage_macro",
+    recovery_available: true,
     defaults: ["libmessage_macro_defaults"],
     apex_available: [
         "//apex_available:platform",

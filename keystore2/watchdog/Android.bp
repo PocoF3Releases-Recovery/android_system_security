@@ -33,6 +33,7 @@ rust_defaults {
 
 rust_library {
     name: "libwatchdog_rs",
+    recovery_available: true,
     defaults: ["libwatchdog_defaults"],
     apex_available: [
         "//apex_available:platform",

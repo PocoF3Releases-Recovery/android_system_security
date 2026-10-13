@@ -23,6 +23,7 @@ package {
 
 rust_library {
     name: "libkeystore2_selinux",
+    recovery_available: true,
     crate_name: "keystore2_selinux",
     srcs: [
         "src/lib.rs",

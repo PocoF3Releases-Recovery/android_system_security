@@ -23,6 +23,7 @@ package {
 
 aidl_interface {
     name: "android.security.authorization",
+    recovery_available: true,
     srcs: ["android/security/authorization/*.aidl"],
     defaults: ["android.hardware.security.keymint-latest-defaults"],
     imports: [
@@ -45,6 +46,7 @@ aidl_interface {
 
 aidl_interface {
     name: "android.security.apc",
+    recovery_available: true,
     srcs: ["android/security/apc/*.aidl"],
     unstable: true,
     backend: {
@@ -62,6 +64,7 @@ aidl_interface {
 
 aidl_interface {
     name: "android.security.compat",
+    recovery_available: true,
     srcs: ["android/security/compat/*.aidl"],
     defaults: ["android.hardware.security.keymint-latest-defaults"],
     imports: [
@@ -85,6 +88,7 @@ aidl_interface {
 
 aidl_interface {
     name: "android.security.maintenance",
+    recovery_available: true,
     srcs: ["android/security/maintenance/*.aidl"],
     defaults: [
         "android.system.keystore2-latest-defaults",
@@ -106,6 +110,7 @@ aidl_interface {
 
 aidl_interface {
     name: "android.security.legacykeystore",
+    recovery_available: true,
     srcs: ["android/security/legacykeystore/*.aidl"],
     unstable: true,
     backend: {
@@ -124,6 +129,7 @@ aidl_interface {
 
 aidl_interface {
     name: "android.security.postprocessor",
+    recovery_available: true,
     srcs: ["android/security/postprocessor/*.aidl"],
     unstable: true,
     backend: {
@@ -144,6 +150,7 @@ aidl_interface {
 
 aidl_interface {
     name: "android.security.metrics",
+    recovery_available: true,
     srcs: ["android/security/metrics/*.aidl"],
     defaults: [
         "android.system.keystore2-latest-defaults",

@@ -23,6 +23,7 @@ package {
 
 cc_library {
     name: "libkeystore2_aaid",
+    recovery_available: true,
     srcs: [
         "aaid.cpp",
     ],
@@ -33,6 +34,7 @@ cc_library {
 
 rust_bindgen {
     name: "libkeystore2_aaid_bindgen",
+    recovery_available: true,
     wrapper_src: "aaid.hpp",
     crate_name: "keystore2_aaid_bindgen",
     source_stem: "bindings",
@@ -45,6 +47,7 @@ rust_bindgen {
 
 rust_library {
     name: "libkeystore2_aaid-rust",
+    recovery_available: true,
     crate_name: "keystore2_aaid",
     srcs: [
         "lib.rs",

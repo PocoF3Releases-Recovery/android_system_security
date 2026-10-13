@@ -41,6 +41,7 @@ rust_defaults {
 
 rust_library {
     name: "libpostprocessor_client",
+    recovery_available: true,
     defaults: [
         "libpostprocessor_client_defaults",
     ],

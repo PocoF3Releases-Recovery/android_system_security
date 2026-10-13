@@ -81,6 +81,7 @@ rust_defaults {
 
 rust_library {
     name: "libkeystore2",
+    recovery_available: true,
     defaults: ["libkeystore2_defaults"],
     rustlibs: [
         "liblibsqlite3_sys",
@@ -197,12 +198,31 @@ cc_aconfig_library {
 
 rust_aconfig_library {
     name: "libkeystore2_flags_rust",
+    recovery_available: true,
     crate_name: "keystore2_flags",
     aconfig_declarations: "keystore2_flags",
 }
 
 rust_aconfig_library {
     name: "libaconfig_android_hardware_biometrics_rust",
+    recovery_available: true,
     crate_name: "aconfig_android_hardware_biometrics_rust",
     aconfig_declarations: "android.hardware.biometrics.flags-aconfig",
+}
+
+// Recovery uses an ephemeral copy of the persistent database. The normal
+// keystore service, its init definition and its database stay unchanged.
+rust_binary {
+    name: "keystore2_recovery",
+    stem: "keystore2",
+    recovery: true,
+    required: ["plat_keystore2_key_contexts.recovery"],
+    srcs: ["src/keystore2_main.rs"],
+    defaults: ["structured_log_rust_defaults"],
+    rustlibs: [
+        "libandroid_logger", "libandroid_security_flags_rust", "libbinder_rs",
+        "liblog_rust", "libkeystore2", "liblegacykeystore-rust", "librusqlite",
+    ],
+    prefer_rlib: true,
+    init_rc: ["keystore2_recovery.rc"],
 }

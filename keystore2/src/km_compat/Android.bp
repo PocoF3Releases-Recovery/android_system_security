@@ -23,6 +23,7 @@ package {
 
 rust_library {
     name: "libkeystore2_km_compat",
+    recovery_available: true,
     crate_name: "keystore2_km_compat",
     srcs: ["lib.rs"],
     defaults: [
@@ -56,6 +57,7 @@ rust_test {
 
 cc_library {
     name: "libkm_compat",
+    recovery_available: true,
     srcs: ["km_compat.cpp"],
     defaults: [
         "keymint_use_latest_hal_aidl_ndk_shared",
@@ -83,6 +85,7 @@ cc_library {
 
 cc_library {
     name: "libkm_compat_service",
+    recovery_available: true,
     srcs: ["km_compat_service.cpp"],
     defaults: [
         "keymint_use_latest_hal_aidl_ndk_shared",

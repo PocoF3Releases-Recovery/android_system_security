@@ -39,6 +39,7 @@ rust_defaults {
 
 rust_library {
     name: "librkpd_client",
+    recovery_available: true,
     defaults: ["librkpd_client_defaults"],
     apex_available: [
         "//apex_available:platform",
